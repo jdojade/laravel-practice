@@ -6,6 +6,7 @@ use App\Http\Controllers\Items2;
 use App\Http\Controllers\Items3;
 use App\Http\Controllers\paramsController;
 use App\Http\Controllers\PracticeEloController;
+use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UploadFileController;
 use Whoops\Run;
 
@@ -46,7 +47,7 @@ Route::get('/users-json', function(){
 Route::get('/users-getFunction', function(){
     return redirect('/');
 });
-// ------------------------------------------------------------------------------------------------------------------------------------------- 
+// -------------------------------------------------------------------------------------------------------------------------------------------
 
 
 Route::get('/home', function(){
@@ -70,6 +71,9 @@ Route::get('/upload',[UploadFileController::class, 'index'])->name('upload');
 Route::get('/files', [UploadFileController::class, 'download'])->name('files');
 
 Route::post('/uploadFile', [UploadFileController::class, 'store'])->name('uploadFile');
+
+Route::get('/uploads3File/index', [UploadController::class, 'index'])->name('uploads3.index');
+Route::post('/uploads3File/store', [UploadController::class, 'store'])->name('uploads3.store');
 // Route::get('/params/{id}',
 //  [paramsController::class, 'index'])->where('id', '[0-9]+')->name('params');
 
@@ -84,7 +88,7 @@ Route::get('/items2/about', [Items2::class, 'about']);
 //Create route with parameters
 // Route::get('/params/{id}', [paramsController::class, 'index']);
 
-// Pattern in params integer 
+// Pattern in params integer
 // Route::get('/params/{id}',
 //     [paramsController::class, 'index'])->where('id', '[0-9]+');
 
@@ -92,12 +96,12 @@ Route::get('/items2/about', [Items2::class, 'about']);
 // Route::get('/params/{id}',
 //     [paramsController::class, 'index'])->where('id', '[a-zA-Z]+[0-9]+');
 
-// Pattern in params strings 
+// Pattern in params strings
 // Route::get('/params/{id}',
 //     [paramsController::class, 'index'])->where('id', '[a-zA-Z]+');
 
 
-// multiple patterns 
+// multiple patterns
 // Route::get('/params/{name}/{id}',
 //     [paramsController::class, 'index'])->where([
 //         'name' => '[a-z]+',
