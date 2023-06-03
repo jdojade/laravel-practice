@@ -25,59 +25,59 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// get user page - return string
-Route::get('/users', function (){
-    return 'user page';
-});
+// // get user page - return string
+// Route::get('/users', function (){
+//     return 'user page';
+// });
 
-// route to users  - get array(JSON)
-Route::get('/user-array', function(){
-    return [1, '2', 3];
-});
+// // route to users  - get array(JSON)
+// Route::get('/user-array', function(){
+//     return [1, '2', 3];
+// });
 
-// route to users - get array (JSON OBJECT)
-Route::get('/users-json', function(){
-    return response ()->json([
-        'name' => 'Sample',
-        'projectName' => 'Laravel Project'
-    ]);
-});
+// // route to users - get array (JSON OBJECT)
+// Route::get('/users-json', function(){
+//     return response ()->json([
+//         'name' => 'Sample',
+//         'projectName' => 'Laravel Project'
+//     ]);
+// });
 
-// route to users - return function
-Route::get('/users-getFunction', function(){
-    return redirect('/');
-});
-// -------------------------------------------------------------------------------------------------------------------------------------------
-
-
-Route::get('/home', function(){
-    return view('home');
-})->name('home');
+// // route to users - return function
+// Route::get('/users-getFunction', function(){
+//     return redirect('/');
+// });
+// // -------------------------------------------------------------------------------------------------------------------------------------------
 
 
-// Route to items - return class
-// Route::get('/items2', [Items2::class, 'index']);
+// Route::get('/home', function(){
+//     return view('home');
+// })->name('home');
 
-Route::get('/items', [ItemsController::class, 'index'])->name('items');
-Route::get('/items2', [Items2::class, 'index'])->name('items2');
-Route::get('/items3', [Items3::class, 'index'])->name('items3');
 
-Route::get('/params/{id}', [paramsController::class, 'index'])->name('params');
-// Route::get('/practice-crud', [PracticeEloController::class, 'index'])->name('practice');
-Route::resource('/practice', PracticeEloController::class);
-Route::get('/upload',[UploadFileController::class, 'index'])->name('upload');
+// // Route to items - return class
+// // Route::get('/items2', [Items2::class, 'index']);
 
-// Route::get('/download{fileUrl}',[UploadFileController::class, 'download'])->name('download');
-Route::get('/files', [UploadFileController::class, 'download'])->name('files');
+// Route::get('/items', [ItemsController::class, 'index'])->name('items');
+// Route::get('/items2', [Items2::class, 'index'])->name('items2');
+// Route::get('/items3', [Items3::class, 'index'])->name('items3');
 
-Route::post('/uploadFile', [UploadFileController::class, 'store'])->name('uploadFile');
+// Route::get('/params/{id}', [paramsController::class, 'index'])->name('params');
+// // Route::get('/practice-crud', [PracticeEloController::class, 'index'])->name('practice');
+// Route::resource('/practice', PracticeEloController::class);
+// Route::get('/upload',[UploadFileController::class, 'index'])->name('upload');
 
-Route::get('/uploads3File/index', [UploadController::class, 'index'])->name('uploads3.index');
-Route::post('/uploads3File/store', [UploadController::class, 'store'])->name('uploads3.store');
-// Route::get('/params/{id}',
-//  [paramsController::class, 'index'])->where('id', '[0-9]+')->name('params');
+// // Route::get('/download{fileUrl}',[UploadFileController::class, 'download'])->name('download');
+// Route::get('/files', [UploadFileController::class, 'download'])->name('files');
 
-Route::get('/items2/about', [Items2::class, 'about']);
+// Route::post('/uploadFile', [UploadFileController::class, 'store'])->name('uploadFile');
+
+// Route::get('/uploads3File/index', [UploadController::class, 'index'])->name('uploads3.index');
+// Route::post('/uploads3File/store', [UploadController::class, 'store'])->name('uploads3.store');
+// // Route::get('/params/{id}',
+// //  [paramsController::class, 'index'])->where('id', '[0-9]+')->name('params');
+
+// Route::get('/items2/about', [Items2::class, 'about']);
 
 // Route to items - return class (not working)
 // Route::get('/items', [ItemsController::class, 'index']);
